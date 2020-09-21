@@ -32,7 +32,36 @@ class Home extends Component{
                 </header>
                 <div className="content">
                     <nav className="sidebar">
-                        Navigation
+                        <ul className="side-nav">
+                            <li className="side-nav__item side-nav__item--active">
+                                <a href="#" className=" side-nav__link">
+                                    <svg className="side-nav__icon"><use xlinkHref={`${icons}#icon-home`}></use></svg>
+                                    <span>Hotel</span>
+                                </a>
+                            </li>
+                            <li className="side-nav__item">
+                                <a href="#" className=" side-nav__link">
+                                    <svg className="side-nav__icon"><use xlinkHref={`${icons}#icon-aircraft-take-off`}></use></svg>
+                                    <span>Flights</span>
+                                </a>
+                            </li>
+                            <li className="side-nav__item">
+                                <a href="#" className=" side-nav__link">
+                                    <svg className="side-nav__icon"><use xlinkHref={`${icons}#icon-key`}></use></svg>
+                                    <span>Car Rentals</span>
+                                </a>
+                            </li>
+                            <li className="side-nav__item">
+                                <a href="#" className=" side-nav__link">
+                                    <svg className="side-nav__icon"><use xlinkHref={`${icons}#icon-map`}></use></svg>
+                                    <span>Tours</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div className="legal">
+                            &copy; 2020 All rights resetved.
+                        </div>
                     </nav>
                     <main className="hotel-view">
                         Hotel View
