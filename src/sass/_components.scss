@@ -11,6 +11,12 @@
     align-items: center;
     justify-content: center;
 
+    @media only screen and (max-width: $bp-smallest){
+        ordeR: 1;
+        flex: 0 0 100%;
+        
+    }
+
     &__input{
         font-family: inherit;
         font-size: inherit;
@@ -118,11 +124,24 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium){
+        display: flex;
+        margin: 0;
+
+    }
+    
+
+
     &__item{
         position: relative;
 
         &:not(:last-child){
             margin-bottom: .5rem;
+        }
+
+        @media only screen and (max-width: $bp-medium){
+            flex: 1;
+    
         }
     }
 
@@ -162,6 +181,19 @@
         align-items: center;
         position: relative;
         z-index:10;
+
+        @media only screen and (max-width: $bp-medium){
+            justify-content: center;
+            padding: 2rem;
+    
+        }
+
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+
+            
+        }
     }
 
     &__icon{
@@ -169,6 +201,13 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small){
+            margin-right: 0;
+            margin-bottom: 7px;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
 
     }
 }
@@ -178,6 +217,14 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+
+    @media only screen and (max-width: $bp-medium){
+        display: none;
+       
+
+    }
+
+    
 }
 
 
@@ -204,6 +251,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__star{
@@ -239,16 +291,29 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        @media only screen and (max-width: $bp-small){
+            padding: 0 1.5rem;
+        }
+        
     }
 
     &__rating-average{
         font-size: 2.25rem;
         font-weight: 300;
+
+        @media only screen and (max-width: $bp-small){
+           font-size: 1.8rem;
+
+        }
     }
 
     &__rating-count{
         font-size: .8rem;
         text-transform: uppercase;
+        @media only screen and (max-width: $bp-small){
+            font-size: .5rem;
+        }
     }
     
 }
@@ -336,15 +401,20 @@
         margin-right: .7rem;
 
         //Older browsers
-        // background-image: url(../images/chevron-thin-right.svg);
-        // background-size: cover;
+        background-image: url(../images/chevron-thin-right.svg);
+        background-size: cover;
 
         //New Browsers - masks
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../images/chevron-thin-right.svg);
-        -webkit-mask-size: cover; 
-        mask-image: url(../images/chevron-thin-right.svg);
-        mask-size: cover;
+
+        @supports (-webkit-mask-image: url()) or (mask-image: url()){
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../images/chevron-thin-right.svg);
+            -webkit-mask-size: cover; 
+            mask-image: url(../images/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+        
     }
 
 }
@@ -362,7 +432,7 @@
     }
 
     &__friends{
-
+        display: flex;
     }
 
     &__photo{
@@ -372,10 +442,12 @@
         border-radius: 50%;
         border: 3px solid #fff;
         &:not(:last-child){
-            margin-right: -1.15rem;
+            margin-right: -2rem;
         }
     }
 }
+
+
 
 // Reviews
 
@@ -386,6 +458,11 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium){
+       padding: 2rem;
+       margin-bottom: 3rem;
+    }
     
     &__text{    
         margin-bottom: 2rem;
@@ -449,6 +526,10 @@
         margin-bottom: 2.5rem;
         text-transform: uppercase;
     }
+
+    @media only screen and (max-width: $bp-medium){
+        padding: 2.5rem 0;
+    }
 }
 
 .btn{
@@ -493,4 +574,6 @@
         animation: pulsate 1s infinite;
     }
 }
+
+
        
